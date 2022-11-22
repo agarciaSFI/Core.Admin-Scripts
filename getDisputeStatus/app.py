@@ -150,7 +150,7 @@ with open('output.csv','w') as csv_file: #Createnew csv file to write to
                 response2 = requests.post(PROD_TRANS_SHOW,json=body2,headers=HEADERS)
                 pretty_response2 = json.loads(response2.text)
                 if pretty_response2['trans'][0]['recent_status']['status_id']=="6":
-                    Tr = True,
+                    Tr = "TRUE",
                     Tc = time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime(pretty_response2["trans"][0]["recent_status"]['date']['$date']/1000 ))
                    
             #Write to csv now that data has been checked for Key Errors
